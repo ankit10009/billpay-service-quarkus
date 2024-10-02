@@ -1,23 +1,20 @@
-package org.example;
+package org.example.service;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.QueryParam;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.example.model.Account;
+import org.example.proxy.AccountServiceClient;
+import org.example.proxy.PayeeServiceClient;
+import org.example.model.Payment;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 @ApplicationScoped
 public class BillPayService {
-
-//@RegisterRestClient(baseUri = "https://stage.code.quarkus.io/api")
 
 @RestClient
 PayeeServiceClient payeeService;

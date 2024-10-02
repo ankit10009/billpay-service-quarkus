@@ -1,9 +1,10 @@
-package org.example;
+package org.example.controller;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 import jakarta.inject.Inject;
-import java.math.BigDecimal;
+import org.example.service.BillPayService;
+import org.example.model.PaymentRequest;
 
 @Path("/billpay")
 @Produces("application/json")
